@@ -1,0 +1,28 @@
+{
+  "name": "gulp-statt",
+  "version": "1.0.0",
+  "description": "You should describe it here.",
+  "main": "gulpfile.js",
+  "author": "Jamie Wilson",
+  "license": "MIT",
+  "dependencies": {
+    "boxen": "^0.8.1",
+    "browser-sync": "latest",
+    "gulp": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-concat": "latest",
+    "gulp-cssnano": "latest",
+    "gulp-plumber": "^1.1.0",
+    "gulp-rename": "latest",
+    "gulp-sass": "latest",
+    "gulp-sourcemaps": "1.6.0",
+    "gulp-swig": "latest",
+    "gulp-uglify": "latest",
+    "run-sequence": "latest",
+    "trash": "^3.4.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jamiewilson/gulp-statt.git"
+  }
+}
