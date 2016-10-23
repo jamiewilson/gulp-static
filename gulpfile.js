@@ -14,15 +14,16 @@ const trash     = require('trash')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
-const sitedata  = require('./config/sitedata')
+const swigOptions = require('./config/swigOptions')
 const reporter  = require('./config/reporter')
 
 // Build index page by itself
 gulp.task('index', () => {
   gulp.src(structure.src.index)
     .pipe(plumber(reporter.onError))
-    .pipe(swig(sitedata))
+    .pipe(swig(swigOptions))
     .pipe(gulp.dest(structure.dest.dir))
+    .pipe(bs.stream())
 })
 
 // 1. Get the page's basename
@@ -32,7 +33,7 @@ gulp.task('index', () => {
 gulp.task('pages', () => {
   gulp.src(structure.src.pages)
     .pipe(plumber(reporter.onError))
-    .pipe(swig(sitedata))
+    .pipe(swig(swigOptions))
     .pipe(rename(file => {
       file.dirname = require('path').join(file.dirname, file.basename)
       file.basename = 'index'
@@ -83,9 +84,9 @@ gulp.task('img', () => {
 })
 
 // Remove contents from build directory
-gulp.task('trash', () => {
-  trash([structure.dest.dir]).then(() => {
-    console.log(`'${structure.dest.dir}' moved to trash.`);
+gulp.task('clean', () => {
+  trash([structure.dest.clean]).then(() => {
+    console.log(`'${structure.dest.dir}' contents moved to trash.`);
   })
 })
 
@@ -95,7 +96,8 @@ gulp.task('serve', () => {
   gulp.watch(structure.src.js, ['js'])
   gulp.watch(structure.src.img, ['img'])
   gulp.watch(structure.src.index, ['index'])
-  gulp.watch(structure.src.markup, ['pages'])
+  gulp.watch(structure.src.pages, ['pages'])
+  gulp.watch(structure.src.layouts, ['pages', 'index'])
   bs(structure.server)
 })
 

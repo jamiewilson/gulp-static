@@ -39,9 +39,9 @@ const inBrowser = err => {
 }
 
 const inConsole = err => gutil.log(
-  gutil.colors.gray(`\n\n ----------------------------------\n\n`) +
+  gutil.colors.gray(`\n\n----------------------------------\n\n`) +
   gutil.colors.red(`ERROR: ${err.plugin}\n\n`) + err.message +
-  gutil.colors.gray(`\n\n ----------------------------------\n\n`)
+  gutil.colors.gray(`\n\n----------------------------------\n\n`)
 )
 
 exports.onError = function (err) {

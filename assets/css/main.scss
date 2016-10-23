@@ -1,8 +1,113 @@
-@import "variables";
+@import "base/variables";
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: $lightgrey;
+  padding: 1rem;
+}
+
+.container {
+  max-width: 75ch;
+  margin: 0 auto;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2rem;
+}
 
 body {
   color: $darkgrey;
-  background: $lightgrey;
   font-family: $font-stack;
+  line-height: 1.6;
   padding: 10%;
+}
+
+h1,
+h2 {
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 1.5rem;
+  padding-top: 2rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+}
+
+h3 {
+  font-size: 1.3rem;
+  line-height: 1.4;
+}
+
+h4 {
+  font-size: 1.2rem;
+  line-height: 1.5;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+a {
+  color: tomato;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+// Code Blocks
+
+pre,
+code {
+  background-color: #f2f2f2;
+  border-radius: 3px;
+  color: #333;
+  font-size: 0.875rem;
+  overflow: auto;
+  padding: 1rem;
+}
+
+pre code { padding: 0; }
+code { padding: 0.2rem 0.4rem; }
+
+// Tables
+
+table {
+  width: 100%;
+  table-layout: fixed;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+}
+
+thead { background-color: #f2f2f2; }
+tr    { border-bottom: 1px solid #ddd; }
+td    { display: table-flex; }
+
+tbody tr:last-child { border-bottom: none; }
+
+th:not(:last-child),
+td:not(:last-child) {
+  border-right: 1px solid #ddd;
+}
+
+th, td {
+  padding: 0.5rem;
+  text-align: left;
+  line-height: 1.4;
 }

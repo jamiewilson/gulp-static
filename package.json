@@ -6,7 +6,6 @@
   "author": "Jamie Wilson",
   "license": "MIT",
   "dependencies": {
-    "boxen": "^0.8.1",
     "browser-sync": "latest",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
@@ -19,6 +18,8 @@
     "gulp-swig": "latest",
     "gulp-uglify": "latest",
     "run-sequence": "latest",
+    "swig-extras": "0.0.1",
+    "swig-marked": "0.0.1",
     "trash": "^3.4.1"
   },
   "repository": {
