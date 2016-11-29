@@ -6,7 +6,7 @@
   "author": "Jamie Wilson",
   "license": "MIT",
   "dependencies": {
-    "browser-sync": "latest",
+    "browser-sync": "^2.17.5",
     "gulp": "latest",
     "gulp-autoprefixer": "latest",
     "gulp-concat": "latest",
@@ -17,8 +17,8 @@
     "gulp-sourcemaps": "1.6.0",
     "gulp-swig": "latest",
     "gulp-uglify": "latest",
+    "highlight.js": "latest",
     "run-sequence": "latest",
-    "swig-extras": "0.0.1",
     "swig-marked": "0.0.1",
     "trash": "^3.4.1"
   },

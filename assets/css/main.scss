@@ -1,4 +1,5 @@
 @import "base/variables";
+@import "base/github-gist";
 
 .nav {
   position: absolute;
@@ -30,8 +31,7 @@ body {
 h1,
 h2 {
   border-bottom: 1px solid #ddd;
-  padding-bottom: 1.5rem;
-  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
 h1 {
@@ -78,7 +78,6 @@ code {
   background-color: #f2f2f2;
   border-radius: 3px;
   color: #333;
-  font-size: 0.875rem;
   overflow: auto;
   padding: 1rem;
 }

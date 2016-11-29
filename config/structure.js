@@ -6,7 +6,7 @@ const css    = 'css'
 const js     = 'js'
 const img    = 'img'
 const misc   = 'misc'
-const keep   = '{!.git,*}'
+const clean   = '{!.git,*}'
 
 // Where to look for source files
 exports.src = {
@@ -15,7 +15,8 @@ exports.src = {
   layouts: `${pages}/**/_*.html`,
   scss:    `${assets}/${css}/**/*.scss`,
   js:      `${assets}/${js}/**/*`,
-  img:     `${assets}/${img}/**/*`
+  img:     `${assets}/${img}/**/*`,
+  misc:    `${misc}/**/*`
 }
 
 // Where to build your site
@@ -24,9 +25,6 @@ exports.dest = {
   css:   `${build}/${css}`,
   js:    `${build}/${js}`,
   img:   `${build}/${img}`,
-  misc:  `${build}/${misc}`,
-  clean: `${build}/${keep}`
+  clean: `${build}/${clean}`,
+  misc:  `${build}/`
 }
-
-// Where to serve build files
-exports.server = { server: `${build}` }

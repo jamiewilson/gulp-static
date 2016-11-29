@@ -1,13 +1,15 @@
 {% extends 'layouts/_default.html' %}
 
 {% block content %}
+
   <div class="nav">
     ← <a href="/">index.html</a> | about.html
   </div>
 
-{% markdown %}
-# About
-This uses the {% raw %}`{% markdown %}`{% endraw %} tag to process markdown within html files.
-{% endmarkdown %}
+  {% markdown %}
+  About
+  ===
+  You can use the {% raw %}`{% markdown %}`{% endraw %} tag to process markdown within html files.
+  {% endmarkdown %}
 
 {% endblock %}

@@ -14,8 +14,9 @@ const trash     = require('trash')
 
 // Customize your site in 'config' directory
 const structure = require('./config/structure')
-const swigOptions = require('./config/swigOptions')
+const swigOptions = require('./config/swig')
 const reporter  = require('./config/reporter')
+const server  = require('./config/server')
 
 // Build index page by itself
 gulp.task('index', () => {
@@ -83,6 +84,14 @@ gulp.task('img', () => {
     .pipe(bs.stream())
 })
 
+// Copy all the files in /misc
+gulp.task('misc', () => {
+  gulp.src(structure.src.misc)
+    .pipe(plumber(reporter.onError))
+    .pipe(gulp.dest(structure.dest.misc))
+    .pipe(bs.stream())
+})
+
 // Remove contents from build directory
 gulp.task('clean', () => {
   trash([structure.dest.clean]).then(() => {
@@ -98,7 +107,7 @@ gulp.task('serve', () => {
   gulp.watch(structure.src.index, ['index'])
   gulp.watch(structure.src.pages, ['pages'])
   gulp.watch(structure.src.layouts, ['pages', 'index'])
-  bs(structure.server)
+  bs(server)
 })
 
 // default 'gulp' task
